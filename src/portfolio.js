@@ -13,7 +13,7 @@ const seo = {
   og: {
     title: "Pradipta Aulia Portfolio",
     type: "website",
-    url: "http://pradiptaaulia.com/",
+    url: "https://praadipta.github.io/portfolio/",
   },
 };
 
