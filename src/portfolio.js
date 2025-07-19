@@ -2,16 +2,16 @@
 
 // Website related settings
 const settings = {
-  isSplash: false, // Change this to false if you don't want Splash screen.
+  isSplash: true, // Change this to false if you don't want Splash screen.
 };
 
 //SEO Related settings
 const seo = {
-  title: "Pradipta's Portfolio",
+  title: "Ashutosh's Portfolio",
   description:
     "A tech enthusiast who always loves to explore and learn new technologies, with a passion for building innovative solutions that push the boundaries of what's possible.",
   og: {
-    title: "Pradipta Aulia Portfolio",
+    title: "Ashutosh Hathidara Portfolio",
     type: "website",
     url: "https://praadipta.github.io/portfolio/",
   },
@@ -23,11 +23,11 @@ const greeting = {
   logo_name: "PradiptaAulia",
   nickname: "Nightsviel",
   subTitle:
-    "A passionate individual who always thrives to work on end to end products which develop sustainable and scalable social and technical systems to create impact.",
+    "A tech enthusiast who always loves to explore and learn new technologies, with a passion for building innovative solutions that push the boundaries of what's possible.",
   resumeLink:
     "https://drive.google.com/file/d/1bXRknv_h-XI_3CQ3SGPteGODtvEb7YvI/view?usp=sharing",
   portfolio_repository: "https://github.com/ashutosh1919/masterPortfolio",
-  githubProfile: "https://github.com/Praadipta",
+  githubProfile: "https://github.com/ashutosh1919",
 };
 
 const socialMediaLinks = [
@@ -59,7 +59,7 @@ const socialMediaLinks = [
   },
   {
     name: "Gmail",
-    link: "pradiptaa674@gmail.com",
+    link: "mailto:pradiptaa674@gmail.com",
     fontAwesomeIcon: "fa-google", // Reference https://fontawesome.com/icons/google?style=brands
     backgroundColor: "#D14836", // Reference https://simpleicons.org/?q=gmail
   },
