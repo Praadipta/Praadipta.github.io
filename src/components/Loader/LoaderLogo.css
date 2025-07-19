@@ -1,4 +1,8 @@
+/* Import Dancing Script from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
 .raw_logo {
+  /* These can be adjusted as needed, but width/height on the SVG tag will take priority */
   height: 305;
   width: 440;
 }
