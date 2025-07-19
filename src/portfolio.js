@@ -7,13 +7,13 @@ const settings = {
 
 //SEO Related settings
 const seo = {
-  title: "Ashutosh's Portfolio",
+  title: "Pradipta's Portfolio",
   description:
     "A tech enthusiast who always loves to explore and learn new technologies, with a passion for building innovative solutions that push the boundaries of what's possible.",
   og: {
-    title: "Ashutosh Hathidara Portfolio",
+    title: "Pradipta Aulia Portfolio",
     type: "website",
-    url: "https://praadipta.github.io/portfolio/",
+    url: "https://praadipta.github.io/splash/",
   },
 };
 
