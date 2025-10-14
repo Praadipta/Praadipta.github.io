@@ -24,10 +24,9 @@ const greeting = {
   nickname: "Nightsviel",
   subTitle:
     "A tech enthusiast who always loves to explore and learn new technologies, with a passion for building innovative solutions that push the boundaries of what's possible.",
-  resumeLink:
-    "https://drive.google.com/file/d/1bXRknv_h-XI_3CQ3SGPteGODtvEb7YvI/view?usp=sharing",
-  portfolio_repository: "https://github.com/ashutosh1919/masterPortfolio",
-  githubProfile: "https://github.com/ashutosh1919",
+  resumeLink: "",
+  portfolio_repository: "",
+  githubProfile: "https://github.com/Praadipta",
 };
 
 const socialMediaLinks = [
@@ -219,7 +218,7 @@ const skills = {
         "⚡ Experience with containerization and container orchestration",
         "⚡ Working with databases and data persistence",
         "⚡ Setting up and maintaining development environments",
-        "⚡ Basic understanding of cloud infrastructure concepts"
+        "⚡ Basic understanding of cloud infrastructure concepts",
       ],
       softwareSkills: [
         {
@@ -231,7 +230,7 @@ const skills = {
         },
         {
           skillName: "MongoDB",
-          fontAwesomeClassname: "simple-icons:mongodb", 
+          fontAwesomeClassname: "simple-icons:mongodb",
           style: {
             color: "#47A248",
           },
@@ -621,7 +620,7 @@ const contactPageData = {
     title: "Blogs",
     subtitle:
       "I like to document some of my experiences in professional career journey as well as some technical knowledge sharing.",
-    link: "https://blogs.ashutoshhathidara.com/",
+    link: "",
     avatar_image_path: "blogs_image.svg",
   },
   addressSection: {
