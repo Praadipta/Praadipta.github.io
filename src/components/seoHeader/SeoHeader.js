@@ -10,53 +10,60 @@ import {
 } from "../../portfolio.js";
 
 function SeoHeader() {
-  let sameAs = [];
-  socialMediaLinks
-    .filter(
-      (media) =>
-        !(media.link.startsWith("tel") || media.link.startsWith("mailto"))
-    )
-    .forEach((media) => {
-      sameAs.push(media.link);
-    });
+  const sameAs = Array.isArray(socialMediaLinks)
+    ? socialMediaLinks
+        .filter(
+          (media) =>
+            media &&
+            media.link &&
+            !(media.link.startsWith("tel") || media.link.startsWith("mailto"))
+        )
+        .map((m) => m.link)
+    : [];
 
-  let mail = socialMediaLinks
-    .find((media) => media.link.startsWith("mailto"))
-    .link.substring("mailto:".length);
-  let job = experience.sections
-    ?.find((section) => section.work)
-    ?.experiences?.at(0);
+  const mailMedia = Array.isArray(socialMediaLinks)
+    ? socialMediaLinks.find(
+        (media) => media && media.link && media.link.startsWith("mailto")
+      )
+    : null;
+  const mail = mailMedia ? mailMedia.link.substring("mailto:".length) : "";
 
-  let credentials = [];
-  certifications.certifications.forEach((certification) => {
-    credentials.push({
-      "@context": "https://schema.org",
-      "@type": "EducationalOccupationalCredential",
-      url: certification.certificate_link,
-      name: certification.title,
-      description: certification.subtitle,
-    });
-  });
+  const job = Array.isArray(experience?.sections)
+    ? experience.sections.find((section) => section && section.work)
+        ?.experiences?.[0]
+    : null;
+
+  const credentials = Array.isArray(certifications?.certifications)
+    ? certifications.certifications.map((certification) => ({
+        "@context": "https://schema.org",
+        "@type": "EducationalOccupationalCredential",
+        url: certification.certificate_link || "",
+        name: certification.title || "",
+        description: certification.subtitle || "",
+      }))
+    : [];
   const data = {
     "@context": "https://schema.org/",
     "@type": "Person",
-    name: greeting.title,
+    name: greeting?.title || "",
     url: seo?.og?.url,
     email: mail,
-    telephone: contactPageData.phoneSection?.subtitle,
+    telephone: contactPageData?.phoneSection?.subtitle || "",
     sameAs: sameAs,
-    jobTitle: job.title,
-    worksFor: {
-      "@type": "Organization",
-      name: job.company,
-    },
+    jobTitle: job?.title || "",
+    worksFor: job
+      ? {
+          "@type": "Organization",
+          name: job.company || "",
+        }
+      : undefined,
     address: {
       "@type": "PostalAddress",
-      addressLocality: contactPageData.addressSection?.locality,
-      addressRegion: contactPageData.addressSection?.region,
-      addressCountry: contactPageData.addressSection?.country,
-      postalCode: contactPageData.addressSection?.postalCode,
-      streetAddress: contactPageData.addressSection?.streetAddress,
+      addressLocality: contactPageData?.addressSection?.locality || "",
+      addressRegion: contactPageData?.addressSection?.region || "",
+      addressCountry: contactPageData?.addressSection?.country || "",
+      postalCode: contactPageData?.addressSection?.postalCode || "",
+      streetAddress: contactPageData?.addressSection?.streetAddress || "",
     },
     hasCredential: credentials,
   };
